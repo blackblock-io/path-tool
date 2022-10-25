@@ -1,0 +1,1195 @@
+[gd_scene load_steps=116 format=3 uid="uid://bq5vinkauhl2y"]
+
+[ext_resource type="Script" path="res://addons/path-tool/path_node/path_point_manager.gd" id="2_3jgq3"]
+[ext_resource type="Script" path="res://addons/path-tool/path_node/path_point_3d.gd" id="3_g5rit"]
+[ext_resource type="Script" path="res://addons/path-tool/path_node/path_pointer/path_pointer_3d.gd" id="4_h60ui"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6k6lp"]
+
+[sub_resource type="Gradient" id="Gradient_w6ikx"]
+offsets = PackedFloat32Array(0.212575, 0.799401)
+colors = PackedColorArray(0.472656, 0.472656, 0.472656, 1, 0.554688, 0.554688, 0.554688, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0of56"]
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5udds"]
+color_ramp = SubResource("Gradient_w6ikx")
+noise = SubResource("FastNoiseLite_0of56")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n522r"]
+albedo_texture = SubResource("NoiseTexture2D_5udds")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rkbrm"]
+material = SubResource("StandardMaterial3D_n522r")
+size = Vector2(42, 42)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynycs"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jtrpe"]
+material = SubResource("StandardMaterial3D_ynycs")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7o6d"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vicjo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_k7o6d")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 11.3137
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1ew5"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cp4eo"]
+material = SubResource("StandardMaterial3D_e1ew5")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jidvr"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_my0j3"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jidvr")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 16.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b82np"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gw04c"]
+material = SubResource("StandardMaterial3D_b82np")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ox46"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q5bky"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_8ox46")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 11.3137
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uw48"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ikbkp"]
+material = SubResource("StandardMaterial3D_6uw48")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b34ry"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_011wo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_b34ry")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 29.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gnk7"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1r37a"]
+material = SubResource("StandardMaterial3D_7gnk7")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5pxj"]
+shading_mode = 0
+albedo_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_b4dh4"]
+material = SubResource("StandardMaterial3D_u5pxj")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4s2f"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f6d61"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_r4s2f")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 29.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0715"]
+shading_mode = 0
+albedo_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hieia"]
+material = SubResource("StandardMaterial3D_t0715")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_et0xo"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ar5bg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_et0xo")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 29.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrfar"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mklxc"]
+material = SubResource("StandardMaterial3D_qrfar")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31lnu"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7oisk"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_31lnu")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 5.65685
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lxmk"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5vury"]
+material = SubResource("StandardMaterial3D_8lxmk")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bk7k7"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7slvl"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_bk7k7")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 16.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hklmd"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gvtmo"]
+material = SubResource("StandardMaterial3D_hklmd")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxnwq"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kjyso"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_kxnwq")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 5.65685
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2042"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pb0eo"]
+material = SubResource("StandardMaterial3D_q2042")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63sla"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_prdcg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_63sla")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 29.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_368eh"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vk67i"]
+material = SubResource("StandardMaterial3D_368eh")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvwpw"]
+shading_mode = 0
+albedo_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hyeyr"]
+material = SubResource("StandardMaterial3D_vvwpw")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwq2q"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7rmrx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_kwq2q")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 15.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5v77"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_c8edd"]
+material = SubResource("StandardMaterial3D_i5v77")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvnu4"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8di87"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_uvnu4")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 5.65685
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuukh"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_digi8"]
+material = SubResource("StandardMaterial3D_iuukh")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2xo4"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lu3in"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_l2xo4")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 15.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyb3g"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ku5xk"]
+material = SubResource("StandardMaterial3D_fyb3g")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5d0x6"]
+shading_mode = 0
+albedo_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_sourp"]
+material = SubResource("StandardMaterial3D_5d0x6")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u155h"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_quwpm"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_u155h")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 15.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_graka"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jgccw"]
+material = SubResource("StandardMaterial3D_graka")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yw7ff"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gxud7"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_yw7ff")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 11.3137
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_al8bu"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_r182t"]
+material = SubResource("StandardMaterial3D_al8bu")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55q0h"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sgbka"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_55q0h")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 15.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n1rf"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vjdso"]
+material = SubResource("StandardMaterial3D_7n1rf")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhamo"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tmfmm"]
+material = SubResource("StandardMaterial3D_hhamo")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc4tl"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.576471, 0.439216, 0.858824, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7tjst"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_dc4tl")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 18.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2x83"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_i8wlo"]
+material = SubResource("StandardMaterial3D_d2x83")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nwkw"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.576471, 0.439216, 0.858824, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_du4bb"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_4nwkw")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 4.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfwtp"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_peiox"]
+material = SubResource("StandardMaterial3D_bfwtp")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dx53"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.576471, 0.439216, 0.858824, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fytsi"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_3dx53")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 18.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcgyv"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bu173"]
+material = SubResource("StandardMaterial3D_jcgyv")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhf6e"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.576471, 0.439216, 0.858824, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_psicm"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jhf6e")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 4.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqt0j"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_p7i87"]
+material = SubResource("StandardMaterial3D_kqt0j")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lad0q"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iwm3j"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_lad0q")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 9.8995
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2uxhu"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cdnmf"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_2uxhu")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 7.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oext6"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5oojn"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_oext6")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 9.8995
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh35c"]
+shading_mode = 0
+albedo_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jec8p"]
+material = SubResource("StandardMaterial3D_qh35c")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy7js"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_color = Color(0.117647, 0.564706, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q1lhp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_uy7js")
+top_radius = 0.1
+bottom_radius = 0.6
+height = 7.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y662"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yj0vn"]
+material = SubResource("StandardMaterial3D_6y662")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ewmi"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kxdgj"]
+material = SubResource("StandardMaterial3D_2ewmi")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fcmb"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jwsji"]
+material = SubResource("StandardMaterial3D_7fcmb")
+radius = 0.7
+height = 0.7
+radial_segments = 6
+rings = 3
+is_hemisphere = true
+
+[node name="TestScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 14, 26)
+
+[node name="Roads" type="Node3D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_6k6lp")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Roads"]
+mesh = SubResource("PlaneMesh_rkbrm")
+
+[node name="PathPointManager" type="Node3D" parent="."]
+script = ExtResource("2_3jgq3")
+
+[node name="25329110095139" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_jtrpe")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25341186843100"]
+previous_neighbours = ["25375304077210"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25329110095139"]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 4, -2.47269e-07, -4)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_vicjo")
+script = ExtResource("4_h60ui")
+target_name = "25341186843100"
+
+[node name="25341186843100" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_cp4eo")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25349005853911"]
+previous_neighbours = ["25329110095139"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25341186843100"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.49691e-07, -8)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_my0j3")
+script = ExtResource("4_h60ui")
+target_name = "25349005853911"
+
+[node name="25349005853911" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -8)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_gw04c")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25351885805161"]
+previous_neighbours = ["25341186843100"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25349005853911"]
+transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, -4, -2.47269e-07, -4)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_q5bky")
+script = ExtResource("4_h60ui")
+target_name = "25351885805161"
+
+[node name="25351885805161" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -16)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ikbkp")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25358757210941"]
+previous_neighbours = ["25349005853911"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25351885805161"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -14.5, -6.33815e-07, 6.33815e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_011wo")
+script = ExtResource("4_h60ui")
+target_name = "25358757210941"
+
+[node name="25358757210941" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -16)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_1r37a")
+script = ExtResource("3_g5rit")
+next_neighbours = []
+previous_neighbours = ["25351885805161"]
+
+[node name="25375304077210" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 16)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_b4dh4")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25329110095139"]
+previous_neighbours = []
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25375304077210"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 14.5, -6.33815e-07, 6.33815e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_f6d61")
+script = ExtResource("4_h60ui")
+target_name = "25329110095139"
+
+[node name="25401088514103" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -12)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_hieia")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25406946714102"]
+previous_neighbours = []
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25401088514103"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 14.5, -6.33815e-07, 6.33815e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_ar5bg")
+script = ExtResource("4_h60ui")
+target_name = "25406946714102"
+
+[node name="25406946714102" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_mklxc")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25409824819306"]
+previous_neighbours = ["25401088514103"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25406946714102"]
+transform = Transform3D(-0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 2, -1.23634e-07, 2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_7oisk")
+script = ExtResource("4_h60ui")
+target_name = "25409824819306"
+
+[node name="25409824819306" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -8)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_5vury")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25414312043973"]
+previous_neighbours = ["25406946714102"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25409824819306"]
+transform = Transform3D(-1, -1.50996e-07, -6.60024e-15, 0, -4.37114e-08, 1, -1.50996e-07, 1, 4.37114e-08, -1.20797e-06, -3.49691e-07, 8)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_7slvl")
+script = ExtResource("4_h60ui")
+target_name = "25414312043973"
+
+[node name="25414312043973" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_gvtmo")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25417609221104"]
+previous_neighbours = ["25409824819306"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25414312043973"]
+transform = Transform3D(-0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, 0.707107, 3.09086e-08, -2, -1.23634e-07, 2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_kjyso")
+script = ExtResource("4_h60ui")
+target_name = "25417609221104"
+
+[node name="25417609221104" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pb0eo")
+script = ExtResource("3_g5rit")
+next_neighbours = ["25424094450421"]
+previous_neighbours = ["25414312043973"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25417609221104"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -14.5, -6.33815e-07, 6.33815e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_prdcg")
+script = ExtResource("4_h60ui")
+target_name = "25424094450421"
+
+[node name="25424094450421" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 12)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_vk67i")
+script = ExtResource("3_g5rit")
+next_neighbours = []
+previous_neighbours = ["25417609221104"]
+
+[node name="2552990941880" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 21)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_hyeyr")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = ["2554179848937"]
+previous_neighbours = []
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/2552990941880"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.27835e-07, -7.5)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_7rmrx")
+script = ExtResource("4_h60ui")
+target_name = "2554179848937"
+
+[node name="2554179848937" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_c8edd")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = ["25547061985940"]
+previous_neighbours = ["2552990941880"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/2554179848937"]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 2, -1.23634e-07, -2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_8di87")
+script = ExtResource("4_h60ui")
+target_name = "25547061985940"
+
+[node name="25547061985940" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_digi8")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = ["25550760014234"]
+previous_neighbours = ["2554179848937"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25547061985940"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 7.5, -3.27835e-07, 3.27835e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_lu3in")
+script = ExtResource("4_h60ui")
+target_name = "25550760014234"
+
+[node name="25550760014234" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ku5xk")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = []
+previous_neighbours = ["25547061985940"]
+
+[node name="25554500152730" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_sourp")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = ["25557090279495"]
+previous_neighbours = []
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25554500152730"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -7.5, -3.27835e-07, 3.27835e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_quwpm")
+script = ExtResource("4_h60ui")
+target_name = "25557090279495"
+
+[node name="25557090279495" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_jgccw")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = ["25559974242640"]
+previous_neighbours = ["25554500152730"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25557090279495"]
+transform = Transform3D(-0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, 0.707107, 3.09086e-08, -4, -2.47269e-07, 4)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_gxud7")
+script = ExtResource("4_h60ui")
+custom_curve_interp_step_size = 0.0
+target_name = "25559974242640"
+
+[node name="25559974242640" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_r182t")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = ["25563333901236"]
+previous_neighbours = ["25557090279495"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25559974242640"]
+transform = Transform3D(-1, -1.50996e-07, -6.60024e-15, 0, -4.37114e-08, 1, -1.50996e-07, 1, 4.37114e-08, -1.13247e-06, -3.27835e-07, 7.5)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_sgbka")
+script = ExtResource("4_h60ui")
+target_name = "25563333901236"
+
+[node name="25563333901236" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 21)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_vjdso")
+script = ExtResource("3_g5rit")
+tag = 2
+next_neighbours = []
+previous_neighbours = ["25559974242640"]
+
+[node name="25337795940120" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 9)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_tmfmm")
+script = ExtResource("3_g5rit")
+tag = 1
+next_neighbours = ["25381146941285"]
+previous_neighbours = ["25409045403390"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25337795940120"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.93403e-07, -9)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_7tjst")
+script = ExtResource("4_h60ui")
+target_name = "25381146941285"
+
+[node name="25381146941285" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_i8wlo")
+script = ExtResource("3_g5rit")
+tag = 1
+next_neighbours = ["25406557930403"]
+previous_neighbours = ["25337795940120"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25381146941285"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -2, -8.74228e-08, 8.74228e-08)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_du4bb")
+script = ExtResource("4_h60ui")
+target_name = "25406557930403"
+
+[node name="25406557930403" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_peiox")
+script = ExtResource("3_g5rit")
+tag = 1
+next_neighbours = ["25409045403390"]
+previous_neighbours = ["25381146941285"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25406557930403"]
+transform = Transform3D(-1, -1.50996e-07, -6.60024e-15, 0, -4.37114e-08, 1, -1.50996e-07, 1, 4.37114e-08, -1.35896e-06, -3.93403e-07, 9)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_fytsi")
+script = ExtResource("4_h60ui")
+target_name = "25409045403390"
+
+[node name="25409045403390" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 9)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_bu173")
+script = ExtResource("3_g5rit")
+tag = 1
+next_neighbours = ["25337795940120"]
+previous_neighbours = ["25406557930403"]
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25409045403390"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 2, -8.74228e-08, 8.74228e-08)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_psicm")
+script = ExtResource("4_h60ui")
+target_name = "25337795940120"
+
+[node name="2597464790555" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_p7i87")
+script = ExtResource("3_g5rit")
+next_neighbours = ["2597456324461", "2597460670254", "2597468901911"]
+previous_neighbours = ["25167848905363"]
+
+[node name="PathPointer3D4" type="MeshInstance3D" parent="PathPointManager/2597464790555"]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 3.5, -2.1636e-07, -3.5)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_iwm3j")
+script = ExtResource("4_h60ui")
+target_name = "2597456324461"
+
+[node name="PathPointer3D5" type="MeshInstance3D" parent="PathPointManager/2597464790555"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 3.5, -1.5299e-07, 1.5299e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_cdnmf")
+script = ExtResource("4_h60ui")
+target_name = "2597460670254"
+
+[node name="PathPointer3D6" type="MeshInstance3D" parent="PathPointManager/2597464790555"]
+transform = Transform3D(-0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 3.5, -2.1636e-07, 3.5)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_5oojn")
+script = ExtResource("4_h60ui")
+target_name = "2597468901911"
+
+[node name="25167848905363" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_jec8p")
+script = ExtResource("3_g5rit")
+next_neighbours = ["2597464790555"]
+previous_neighbours = []
+
+[node name="PathPointer3D" type="MeshInstance3D" parent="PathPointManager/25167848905363"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 3.5, -1.5299e-07, 1.5299e-07)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_q1lhp")
+script = ExtResource("4_h60ui")
+target_name = "2597464790555"
+
+[node name="2597460670254" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_yj0vn")
+script = ExtResource("3_g5rit")
+next_neighbours = []
+previous_neighbours = ["2597464790555"]
+
+[node name="2597468901911" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 7)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_kxdgj")
+script = ExtResource("3_g5rit")
+next_neighbours = []
+previous_neighbours = ["2597464790555"]
+
+[node name="2597456324461" type="MeshInstance3D" parent="PathPointManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -7)
+transparency = 0.2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_jwsji")
+script = ExtResource("3_g5rit")
+next_neighbours = []
+previous_neighbours = ["2597464790555"]

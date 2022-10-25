@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv4f3pf3pycyd"]
+
+[ext_resource type="Material" uid="uid://dmrb68hyxqcdw" path="res://addons/path-tool/path_node/materials/interp_node_material.tres" id="1_j6chf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jrcux"]
+material = ExtResource("1_j6chf")
+top_radius = 0.0
+bottom_radius = 0.3
+height = 1.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x6m51"]
+material = ExtResource("1_j6chf")
+size = Vector2(0.2, 10)
+
+[node name="HoverVisualizer" type="Node3D"]
+
+[node name="Cone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_jrcux")
+skeleton = NodePath("../..")
+
+[node name="Bar1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_x6m51")
+
+[node name="Bar2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.01, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_x6m51")

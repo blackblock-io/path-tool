@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "MeshInstance3D",
+"class": &"PathPoint3D",
+"language": &"GDScript",
+"path": "res://addons/path-tool/path_node/path_point_3d.gd"
+}, {
+"base": "Node3D",
+"class": &"PathPointManager",
+"language": &"GDScript",
+"path": "res://addons/path-tool/path_node/path_point_manager.gd"
+}, {
+"base": "MeshInstance3D",
+"class": &"PathPointer3D",
+"language": &"GDScript",
+"path": "res://addons/path-tool/path_node/path_pointer/path_pointer_3d.gd"
+}, {
+"base": "Resource",
+"class": &"SaveResource",
+"language": &"GDScript",
+"path": "res://addons/path-tool/save_resource.gd"
+}]
+_global_script_class_icons={
+"PathPoint3D": "",
+"PathPointManager": "",
+"PathPointer3D": "",
+"SaveResource": ""
+}
+
+[application]
+
+config/name="Path Tool"
+run/main_scene="res://test_scene/test_scene.tscn"
+config/features=PackedStringArray("4.0")
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/path-tool/plugin.cfg")
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
